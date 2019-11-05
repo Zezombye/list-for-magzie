@@ -1,0 +1,66 @@
+<html>
+
+
+    <style>
+    
+    table, th, td {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        border-color: gray;
+        padding: 10px;
+    }
+
+    table {
+        margin: auto;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    
+    </style>
+
+    <body>
+        <h1>List of Workshop bugs</h1>
+        <div>
+            <table id="output-table" width="800">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+    <script>
+    
+    var list = [{
+        "name": "Go to assemble heroes doesn't work",
+        "description": "On the Assault gamemode (and possibly others such as Hybrid, Escort, or Control) the action 'Go to assemble heroes' doesn't do anything.",
+    },{
+        "name": "Effect size isn't exact",
+        "description": "The visual size of a sphere is a little smaller than its radius; this discrepancy is very visible when the radius is increased, to the point that it is a noticeable bother in parkours. Currently, the equation for a sphere is the following:<br><img src='https://cdn.discordapp.com/attachments/538415973116411912/588545753010667550/unknown.png'/><br>This makes a sphere of radius 200 have a visual height of 199.79 and a visual radius of 196.944. This is also true for cylinders (<a href='https://i.imgur.com/CvU02Yk.jpg'>https://i.imgur.com/CvU02Yk.jpg</a>) and probably other effects such as rings.",
+    }
+    ]
+
+
+    var table = document.getElementById("output-table");
+
+    for (var elem of list) {
+        var row = table.insertRow(-1);
+        var cell0 = row.insertCell(0);
+        cell0.innerHTML = elem.name;
+        var cell1 = row.insertCell(1);
+        cell1.style = "text-align: left;";
+        cell1.innerHTML = elem.description;
+    }
+    
+    </script>
+</html>
